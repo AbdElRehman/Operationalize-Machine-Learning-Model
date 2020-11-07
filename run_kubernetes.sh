@@ -15,5 +15,4 @@ kubectl run mlmodel --image=$dockerpath --labels="tag=MLmodel"
 kubectl get pods
 # Step 4:
 # Forward the container port to a host
-POD_NAME=$(kubectl get pods -l tag=MLmodel -o jsonpath='{.items[0].metadata.name}')
 kubectl port-forward mlmodel 8000:80
