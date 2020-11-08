@@ -1,1 +1,10 @@
-<paste log output from Kubernetes-mediated prediction, here>
+root@ip-172-31-70-72:/home/ubuntu/DevOps_Microservices/project-ml-microservice-kubernetes# ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "mlmodel" already exists
+NAME             READY   STATUS         RESTARTS   AGE
+hello-minikube   1/1     Running        3          3d
+kubectl          0/1     ErrImagePull   0          3d
+mlmodel          1/1     Running        0          6m40s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
