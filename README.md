@@ -1,43 +1,23 @@
 [![CircleCI](https://circleci.com/gh/AbdElRehman/Hello.svg?style=shield)](https://app.circleci.com/pipelines/github/AbdElRehman/Hello)
 
-
-## Project Overview
-
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
-
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
-
-### Project Tasks
-
-Your project goal is to operationalize this working, machine learning microservice using [kubernetes](https://kubernetes.io/), which is an open-source system for automating the management of containerized applications. In this project you will:
-* Test your project code using linting
-* Complete a Dockerfile to containerize this application
-* Deploy your containerized application using Docker and make a prediction
-* Improve the log statements in the source code for this application
-* Configure Kubernetes and create a Kubernetes cluster
-* Deploy a container using Kubernetes and make a prediction
-* Upload a complete Github repo with CircleCI to indicate that your code has been tested
-
-You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
-
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
-
----
-
-## Setup the Environment
-
-* Create a virtualenv and activate it
-* Run `make install` to install the necessary dependencies
+## Project Summary
+This project is to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 ### Running `app.py`
-
 1. Standalone:  `python app.py`
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
-### Kubernetes Steps
-
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+### Explanation of Repo. Files
+1. .circleci, contains the configuration file for circleci (Continues integration SaaS), this is to validate the app to be ready for deployment.
+2. output_txt_files folder contains two files,
+ 2.1 docker_out.txt, contains the logs for payload, sampled payload and predictions.
+ 2.2 kubernetes_out.txt, the logs for the app running on kubenetes cluster.
+3. Dockerfile, instructions to follow docker use to containerize application and create docker image.
+4. Makefile, way to ease the process of running grouped commands
+5. app.py, Application source code.
+6. make_predictions.sh, this script we use to make predictions using the model trained
+7. requirements.txt, this file contains all the libraries application need
+8. run_docker.sh, this script consolidate all the commands we need to build, run and docker image, expose the container port to host port.
+9. run_kubernetes.sh, this script consolidate all the commands we need to run container on kubernetes cluster.
+10. upload_docker.sh, this script consolidate all the commands we need to upload docker image to docker hub.
